@@ -1,0 +1,386 @@
+body {
+
+  margin: 0;
+
+  padding: 0;
+
+  background-image: url("background-image.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  height: 100vh;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#intro-screen {
+
+  background-color: black;
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 9999;
+
+}
+
+#play-button {
+
+  font-size: 24px;
+
+  padding: 16px 32px;
+
+  background-color: #ffffff;
+
+  color: #000000;
+
+  border: none;
+
+  cursor: pointer;
+
+}
+
+#play-button:focus {
+
+  outline: none;
+
+}
+
+header {
+
+  position: fixed;
+
+  top: 0;
+
+  padding: 5px;
+
+  align-items: center;
+
+  text-align: center;
+
+  background: #121212;
+
+  color: white;
+
+  width: 100%;
+
+  font-size: 1rem;
+
+  font-weight: bold;
+
+}
+
+h1 {
+
+  text-shadow: 1px 1px 2px black;
+
+  color: #fff;
+
+}
+
+.yes-or-no {
+
+  height: 150px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+.yes-or-no .yes {
+
+  font-weight: bold;
+
+  margin-right: 5px;
+
+  background: rgb(132, 207, 132);
+
+  color: white;
+
+  font-size: 1rem;
+
+  border: 2px solid black;
+
+  border-radius: 8px;
+
+  padding: 5px;
+
+  text-transform: uppercase;
+
+}
+
+.yes-or-no .no {
+
+  margin-left: 5px;
+
+  font-weight: bold;
+
+  background: rgb(216, 106, 106);
+
+  color: white;
+
+  font-size: 1rem;
+
+  border-radius: 8px;
+
+  border: 2px solid black;
+
+  padding: 5px;
+
+  text-transform: uppercase;
+
+}
+
+/* ... outros estilos ... */
+
+/* ... outros estilos ... */
+
+/* ... outros estilos ... */
+
+/* ... outros estilos ... */
+
+/* ... outros estilos ... */
+
+.left-image {
+
+  position: absolute;
+
+  top: 10px;
+
+  left: 10px;
+
+  width: 0;
+
+  height: auto;
+
+  opacity: 0;
+
+  animation: appearLeftImage 1s forwards, growLeftImage 1s 1s forwards;
+
+}
+
+.right-image {
+
+  position: absolute;
+
+  top: 10px;
+
+  right: 10px;
+
+  width: 0;
+
+  height: auto;
+
+  opacity: 0;
+
+  animation: appearRightImage 1s forwards, growRightImage 1s 1s forwards;
+
+}
+
+@keyframes appearLeftImage {
+
+  0% {
+
+    opacity: 0;
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+  }
+
+}
+
+@keyframes appearRightImage {
+
+  0% {
+
+    opacity: 0;
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+  }
+
+}
+
+@keyframes growLeftImage {
+
+  0% {
+
+    width: 0;
+
+  }
+
+  100% {
+
+    width: 100%;
+
+  }
+
+}
+
+@keyframes growRightImage {
+
+  0% {
+
+    width: 0;
+
+  }
+
+  100% {
+
+    width: 100%;
+
+  }
+
+}
+
+#particles-js {
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  z-index: -1;
+
+}
+
+.heart {
+
+  animation: heartbeat 1s infinite;
+
+}
+
+@keyframes heartbeat {
+
+  0% {
+
+    transform: scale(1);
+
+  }
+
+  50% {
+
+    transform: scale(1.2);
+
+  }
+
+  100% {
+
+    transform: scale(1);
+
+  }
+
+}
+
+#particles-js {
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  z-index: -1;
+
+}
+
+@media (max-width: 600px) {
+
+  h1 {
+
+    font-size: 15px; /* Ajuste o tamanho do texto para dispositivos móveis */
+
+  }
+
+}
+
+.left-image,
+
+.right-image {
+
+  transition: transform 0.3s ease;
+
+}
+
+.expanded-image {
+
+  transform: scale(1.2);
+
+}
+
+@keyframes pulse {
+
+  0% {
+
+    transform: scale(1);
+
+  }
+
+  50% {
+
+    transform: scale(1.1);
+
+  }
+
+  100% {
+
+    transform: scale(1);
+
+  }
+
+}
+
+.pulsating-text {
+
+  animation: pulse 1s infinite;
+
+}
+
+/* ... outros estilos ... */
+
