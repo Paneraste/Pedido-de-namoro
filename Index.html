@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Namora comigo?</title>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <audio id="background-music" src="01.mp3" loop></audio>
+
+</head>
+
+<body>
+  <div id="intro-screen">
+    <button id="play-button">Play</button>
+  </div>
+  <div id="particles-js"></div>
+  <header>
+    <div class="cabeçalho">
+      <h3>Não aceito "não" como resposta 😔</h3>
+    </div>
+  </header>
+
+  <img src="left-image.png" alt="Left Image" class="left-image" onmouseover="expandImage(this)" onmouseout="shrinkImage(this)" onclick="openLink('URL_DO_SEU_LINK_AQUI')">
+  <img src="right-image.png" alt="Right Image" class="right-image" onmouseover="expandImage(this)" onmouseout="shrinkImage(this)" onclick="openLink('URL_DO_SEU_LINK_AQUI')">
+
+  <h1 class="pulsating-text">Você aceita namorar comigo?</h1>
+
+  <div class="yes-or-no">
+  <button class="yes" onclick="thanks()">❤️ Sim :)</button>
+  <button class="no" onclick="not()">💔 Não :(</button>
+
+  </div>
+  <script src="script.js"></script>
+  <script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var context = new (window.AudioContext || window.webkitAudioContext)();
+    var audio = new Audio('01.mp3');
+    audio.addEventListener('canplaythrough', function() {
+      var source = context.createMediaElementSource(audio);
+      source.connect(context.destination);
+      audio.play();
+    });
+  });
+</script>
+
+</body>
+
+</html>
