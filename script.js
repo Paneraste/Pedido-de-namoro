@@ -12,9 +12,9 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     positionY = getRandomPosition(-100, 100);
     btn.style.transform = `translate(${positionX}px, ${positionY}px)`;
     btn.style.transition = "all 0.3s ease";
-    checkNoButtonClicks();
+    // Remover a chamada para checkNoButtonClicks() em dispositivos móveis
   });
-  
+
   btn.addEventListener("touchend", function() {
     positionX = getRandomPosition(-100, 100);
     positionY = getRandomPosition(-100, 100);
@@ -35,8 +35,8 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
 
 function thanks() {
-  alert("Nós já namoramos! Mas te amo por escolher de novo!");
-}  
+  alert("Nós já namoramos! Mas te amo por me escolher de novo!");
+}
 
 var btnYes = document.querySelector(".yes");
 
@@ -50,7 +50,7 @@ function openYouTubeVideo() {
   var youtubeUrl = "https://www.youtube.com/watch?v=WRxwtV_x8nM&themeRefresh=1";
   setTimeout(function() {
     window.location.href = youtubeUrl;
-  }, 1000); // Wait for 1 second before opening the YouTube video
+  }, 1000); // Aguarde 1 segundo antes de abrir o vídeo do YouTube
 }
 
 function not() {
@@ -59,7 +59,7 @@ function not() {
 
 function checkNoButtonClicks() {
   noButtonClicks++;
-  if (noButtonClicks % 3 === 0) {
+  if (noButtonClicks % 5 === 0) { // Alterar o número de tentativas para 5
     not();
   }
 }
