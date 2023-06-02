@@ -12,7 +12,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     positionY = getRandomPosition(-100, 100);
     btn.style.transform = `translate(${positionX}px, ${positionY}px)`;
     btn.style.transition = "all 0.3s ease";
-    // Remover a chamada para checkNoButtonClicks() em dispositivos móveis
+    checkNoButtonClicks();
   });
 
   btn.addEventListener("touchend", function() {
@@ -27,7 +27,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     positionY = getRandomPosition(-100, 100);
     btn.style.transform = `translate(${positionX}px, ${positionY}px)`;
     btn.style.transition = "all 0.3s ease";
-    checkNoButtonClicks();
   });
   btn.addEventListener("click", function() {
     checkNoButtonClicks();
@@ -59,10 +58,12 @@ function not() {
 
 function checkNoButtonClicks() {
   noButtonClicks++;
-  if (noButtonClicks % 5 === 0) { // Alterar o número de tentativas para 5
+  if (noButtonClicks % 5 === 0) {
     not();
   }
 }
+
+
 
 /* ... seu código JavaScript existente ... */
 
