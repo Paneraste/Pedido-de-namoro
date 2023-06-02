@@ -1,0 +1,100 @@
+.left-image {
+
+  position: absolute;
+
+  top: 10px;
+
+  left: 10px;
+
+  width: 0;
+
+  height: auto;
+
+  opacity: 0;
+
+  animation: appearLeftImage 1s forwards, growLeftImage 1s 1s forwards;
+
+}
+
+.right-image {
+
+  position: absolute;
+
+  top: 10px;
+
+  right: 10px;
+
+  width: 0;
+
+  height: auto;
+
+  opacity: 0;
+
+  animation: appearRightImage 1s forwards, growRightImage 1s 1s forwards;
+
+}
+
+@keyframes appearLeftImage {
+
+  0% {
+
+    opacity: 0;
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+  }
+
+}
+
+@keyframes appearRightImage {
+
+  0% {
+
+    opacity: 0;
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+  }
+
+}
+
+@keyframes growLeftImage {
+
+  0% {
+
+    width: 0;
+
+  }
+
+  100% {
+
+    width: 100%;
+
+  }
+
+}
+
+@keyframes growRightImage {
+
+  0% {
+
+    width: 0;
+
+  }
+
+  100% {
+
+    width: 100%;
+
+  }
+
+}
+
