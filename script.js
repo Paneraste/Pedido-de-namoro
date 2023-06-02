@@ -58,7 +58,7 @@ function not() {
 
 function checkNoButtonClicks() {
   noButtonClicks++;
-  if (noButtonClicks % 5 === 0) {
+  if (noButtonClicks % 10 === 0) {
     not();
   }
 }
