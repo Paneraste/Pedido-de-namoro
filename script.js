@@ -192,7 +192,7 @@ particlesJS("particles-js", {
     shape: {
       type: "image",
       image: {
-        src: "C:/Users/Vinagre/Desktop/Site/heart.png",
+        src: "heart.png",
         width: 100,
         height: 100
       }
