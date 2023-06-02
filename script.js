@@ -7,7 +7,8 @@ function getRandomPosition(min, max) {
 }
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-  btn.addEventListener("touchstart", function() {
+  btn.addEventListener("touchstart", function(event) {
+    event.preventDefault();
     positionX = getRandomPosition(-100, 100);
     positionY = getRandomPosition(-100, 100);
     btn.style.transform = `translate(${positionX}px, ${positionY}px)`;
@@ -58,10 +59,11 @@ function not() {
 
 function checkNoButtonClicks() {
   noButtonClicks++;
-  if (noButtonClicks % 10 === 0) {
+  if (noButtonClicks % 5 === 0) {
     not();
   }
 }
+
 
 
 
