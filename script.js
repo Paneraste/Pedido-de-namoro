@@ -35,7 +35,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
 
 function thanks() {
-  alert("Nós já namoramos! Mas te amo por me escolher de novo!");
+  alert("Nós não namoramos! Mas te amo ainda");
 }
 
 var btnYes = document.querySelector(".yes");
@@ -47,7 +47,7 @@ btnYes.addEventListener("click", function() {
 
 function openYouTubeVideo() {
   var videoId = "WRxwtV_x8nM";
-  var youtubeUrl = "https://www.youtube.com/watch?v=WRxwtV_x8nM&themeRefresh=1";
+  var youtubeUrl = "https://paneraste.github.io/K/";
   setTimeout(function() {
     window.location.href = youtubeUrl;
   }, 1000); // Aguarde 1 segundo antes de abrir o vídeo do YouTube
@@ -304,4 +304,5 @@ playButton.addEventListener("click", function() {
     rightImage.style.animation = "slideRightImage 2s forwards";
   }, 1000); // Espera 1 segundo antes de iniciar a animação
 });
+
 
