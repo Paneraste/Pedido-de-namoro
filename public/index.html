@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camilla</title>
+  <script src="particles.min.js"></script>
+  <link rel="stylesheet" href="stylesPC.css">
+  <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    
+    #intro-screen {
+      background-color: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #countdown {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .time-box {
+      text-align: center;
+    }
+    .time-box span {
+      display: block;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .label {
+      font-size: 0.8rem;
+    }
+    #play-button {
+      font-size: 24px;
+      padding: 16px 32px;
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      cursor: pointer;
+    }
+    #play-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+
+  <audio id="background-music" src="01.mp3" loop></audio>
+</head>
+
+<body>
+  <div id="intro-screen">
+    <div id="countdown">
+      <div class="time-box">
+        <span id="days">00</span>
+        <div class="label">Dias</div>
+      </div>
+      <div class="time-box">
+        <span id="hours">00</span>
+        <div class="label">Horas</div>
+      </div>
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <div class="label">Minutos</div>
+      </div>
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <div class="label">Segundos</div>
+      </div>
+    </div>
+    <button id="play-button">Play</button>
+  </div>
+
+  <div id="particles-js"></div>
+  <header>
+    <div class="cabeçalho">
+      <h3>Não aceito "não" como resposta 😔</h3>
+    </div>
+  </header>
+
+  <img src="left-image.png" alt="Left Image" class="left-image" onmouseover="expandImage(this)" onmouseout="shrinkImage(this)" onclick="openLink('https://www.facebook.com/0MORS')">
+  <img src="right-image.png" alt="Right Image" class="right-image" onmouseover="expandImage(this)" onmouseout="shrinkImage(this)" onclick="openLink('https://www.facebook.com/MillaBritoo')">
+
+  <h1 class="pulsating-text">Você aceita namorar comigo?</h1>
+
+  <div class="yes-or-no">
+    <button class="yes" onclick="thanks()">❤️ Sim :)</button>
+    <button class="no" onclick="not()">💔 Não :(</button>
+  </div>
+
+  ;
+
+  <script src="script.js"></script>
+</body>
+
+</html>

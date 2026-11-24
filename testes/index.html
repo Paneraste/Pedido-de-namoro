@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camilla</title>
+  <script src="particles.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylesPC.css">
+  <!-- Estilos internos para contador e intro-screen -->
+  <style>
+    /* Container da tela de intro em coluna */
+    #intro-screen {
+      background-color: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    /* Aparência do contador */
+    #countdown {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .time-box {
+      text-align: center;
+    }
+    .time-box span {
+      display: block;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .label {
+      font-size: 0.8rem;
+    }
+
+    /* Botão Play */
+    #play-button {
+      font-size: 24px;
+      padding: 16px 32px;
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      cursor: pointer;
+    }
+    #play-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+
+  <!-- Música de fundo -->
+  <audio id="background-music" src="01.mp3" loop></audio>
+</head>
+
+<body>
+  <div id="intro-screen">
+    <div id="countdown">
+      <div class="time-box">
+        <span id="days">00</span>
+        <div class="label">Dias</div>
+      </div>
+      <div class="time-box">
+        <span id="hours">00</span>
+        <div class="label">Horas</div>
+      </div>
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <div class="label">Minutos</div>
+      </div>
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <div class="label">Segundos</div>
+      </div>
+    </div>
+    <button id="play-button" disabled>Play</button>
+  </div>
+
+  <div id="particles-js"></div>
+  <header>
+    <div class="cabeçalho">
+      <h3>Não aceito "não" como resposta 😔</h3>
+    </div>
+  </header>
+
+  <img src="left-image.png" alt="Left Image" class="left-image" onmouseover="expandImage(this)" onmouseout="shrinkImage(this)" onclick="openLink('https://www.facebook.com/')">
+  <img src="right-image.png" alt="Right Image" class="right-image" onmouseover="expandImage(this)" onmouseout="shrinkImage(this)" onclick="openLink('https://www.facebook.com/')">
+
+  <h1 class="pulsating-text">Você aceita namorar comigo?</h1>
+
+  <div class="yes-or-no">
+    <button class="yes" onclick="thanks()">❤️ Sim :)</button>
+    <button class="no" onclick="not()">💔 Não :(</button>
+  </div>
+
+  <script>
+    // Configuração do contador regressivo
+    const targetDate = new Date('2025-04-18T14:08:00').getTime();
+    const playButton = document.getElementById('play-button');
+    playButton.disabled = true;
+
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = targetDate - now;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = String(days).padStart(2, '0');
+      document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+      document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+
+      if (diff <= 0) {
+        clearInterval(intervalId);
+        document.getElementById('countdown').style.display = 'none';
+        playButton.disabled = false;
+      }
+    }
+
+    // Inicia o contador e intervalo
+    updateCountdown();
+    const intervalId = setInterval(updateCountdown, 1000);
+
+    // Evento do botão Play
+    playButton.addEventListener('click', () => {
+      if (!playButton.disabled) {
+        document.getElementById('intro-screen').style.display = 'none';
+        document.getElementById('background-music').play();
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
